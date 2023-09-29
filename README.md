@@ -1,1 +1,3 @@
 # RubricaWPF
+
+Rubrica con interfaccia
