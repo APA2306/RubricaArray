@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Anelli.Alessandro.4I.Rubrica/1.0.0": {
+        "runtime": {
+          "Anelli.Alessandro.4I.Rubrica.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Anelli.Alessandro.4I.Rubrica/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
