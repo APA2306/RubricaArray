@@ -8,7 +8,7 @@ PK;Nome;Cognome;Telefono;Email;
 2;Alessandro;Anelli;3755607057;Anelli@gmail.com;
 3;Davide;Bernardi;1349660321;Bernardi@gmail.com;
 ```
-Il programma divide ogni dato del contatto fra PK,nome,cognome,telefono e email con un array e li mostra a video. Se incontra un contatto con errore non stampa la riga mentre le righe vuote vengono colorate di giallo.
+Il programma divide ogni dato del contatto fra PK,nome,cognome,telefono e email con un array e li mostra a video. Se incontra un contatto con errore non stampa la riga mentre le righe vuote vengono colorate di rosso mentre le righe che hanno la variabile telefono che inizia per 3 vengono colorate di giallo.
 
 # Classe contatto
 
@@ -103,13 +103,21 @@ Qua sopra si puo notare la divisione del contatto in un array con la riga "strin
 
         private void gdDati_LoadingRow(object sender, System.Windows.Controls.DataGridRowEventArgs e)
         {
-            Contatto prova = e.Row.Item as Contatto;
-
-            if (prova != null && prova.PK == 0)
+            Contatto c = e.Row.Item as Contatto;
+            if (c != null)
             {
-                e.Row.Background = Brushes.Yellow;
+                if (c.PK == 0)
+                {
+                    e.Row.Background = Brushes.Red;
+                    e.Row.Foreground = Brushes.White;
+                }
+
+                if (c.Telefono != null && c.Telefono.StartsWith("3"))
+                {
+                    e.Row.Background = Brushes.Yellow;
+                }
             }
         }
-    }
+}
 ```
 Si può notare che abbiamo messo tutto il codide in un metodo "Window loaded" e non nel main, cosi che queste azione avvengano appena si avvia il programma.
